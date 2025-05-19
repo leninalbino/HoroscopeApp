@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    alias(libs.plugins.android.hilt)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.android.safeargs)
 }
 
 android {
@@ -37,6 +41,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -44,6 +49,12 @@ dependencies {
     // NavComponent
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    // Dagger Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    implementation(libs.javapoet)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

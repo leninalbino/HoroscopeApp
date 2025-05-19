@@ -10,11 +10,17 @@ material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
 navVersion = "2.9.0"
+hiltVersion = "2.48"
+javapoet = "1.13.0"
+safeargs = "2.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+
+#Navigation
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navVersion" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navVersion" }
+
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -23,7 +29,16 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
+#DaggerHilt
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltVersion" }
+hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltVersion" }
+
+javapoet = { group = "com.squareup", name = "javapoet", version.ref = "javapoet" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
+android-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt" }
+android-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safeargs" }
