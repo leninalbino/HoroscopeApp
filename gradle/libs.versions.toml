@@ -13,6 +13,8 @@ navVersion = "2.9.0"
 hiltVersion = "2.48"
 javapoet = "1.13.0"
 safeargs = "2.9.0"
+retrofit = "2.9.0"
+interceptor = "4.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +36,14 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltV
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltVersion" }
 
 javapoet = { group = "com.squareup", name = "javapoet", version.ref = "javapoet" }
+
+
+#Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+#Interceptor
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "interceptor" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

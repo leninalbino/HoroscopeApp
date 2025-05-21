@@ -22,12 +22,30 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // Set name application for release build
+            resValue("string", "devCodeName", "HoroscApp")
+            // Set the base URL for the release build
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
+        }
+        getByName("debug") {
+            isDebuggable = true
+            // Set name application for debug build
+            resValue("string", "devCodeName", "[DEBUG] HoroscApp")
+            // Set the base URL for the debug build
+            // In this case, we are using a different base URL for the debug build
+            // You can change this URL to point to your debug server or API
+            // For example:
+            // buildConfigField("String", "BASE_URL", "\"https://debug-server.example.com/\"")
+            // Or use a local server:
+            // buildConfigField("String", "BASE_URL", "\"http://
+            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
         }
     }
     compileOptions {
@@ -40,6 +58,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
 }
@@ -55,6 +74,13 @@ dependencies {
     kapt(libs.hilt.compiler)
 
     implementation(libs.javapoet)
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    //Interceptor
+    implementation(libs.logging.interceptor)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
