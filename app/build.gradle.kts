@@ -45,7 +45,9 @@ android {
             // buildConfigField("String", "BASE_URL", "\"https://debug-server.example.com/\"")
             // Or use a local server:
             // buildConfigField("String", "BASE_URL", "\"http://
-            buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
+            //buildConfigField("String", "BASE_URL", "\"https://newastro-debug.vercel.app/\"")
+            buildConfigField("String", "BASE_URL", "\"https://newastro.vercel.app/\"")
+
         }
     }
     compileOptions {
